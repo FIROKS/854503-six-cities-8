@@ -1,16 +1,11 @@
+import { nanoid } from '@reduxjs/toolkit';
 import Room from '../Room/room';
 
 type MainScreenProps = {
-  cardsAmount: number;
+  cards: JSX.Element[];
 }
 
-function Main({cardsAmount}: MainScreenProps): JSX.Element {
-  const cards: JSX.Element[] = new Array(5);
-
-  for (let i = 0; i < cardsAmount; i++) {
-    cards.push(<Room />);
-  }
-
+function Main({cards}: MainScreenProps): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -100,7 +95,7 @@ function Main({cardsAmount}: MainScreenProps): JSX.Element {
                 </ul>
               </form>
               <div className="cities__places-list places__list tabs__content">
-                {cards}
+                {cards.map(() => <Room key={nanoid()}/>)}
               </div>
             </section>
             <div className="cities__right-section">

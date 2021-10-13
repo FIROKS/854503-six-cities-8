@@ -1,12 +1,12 @@
 import Main from '../main/main';
 
 type AppProps = {
-  cardsAmount: number;
+  cards: JSX.Element[];
 }
 
-function App({cardsAmount}: AppProps): JSX.Element {
+function App({cards}: AppProps): JSX.Element {
   return (
-    <Main cardsAmount = {cardsAmount}/>
+    <Main cards = {cards}/>
   );
 }
 

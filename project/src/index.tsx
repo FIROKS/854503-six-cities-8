@@ -2,12 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/app/app';
 
-const AppSettings = {
-  CARDS_AMOUNT: 8,
-};
+const cards: JSX.Element[] = new Array(5).fill({});
 
 ReactDOM.render(
   <React.StrictMode>
-    <App cardsAmount = {AppSettings.CARDS_AMOUNT}/>
+    <App cards = {cards}/>
   </React.StrictMode>,
   document.getElementById('root'));
