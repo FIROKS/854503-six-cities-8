@@ -1,14 +1,22 @@
+import { MouseEvent } from 'react';
 import { OfferType } from '../../types/offer';
 
 type OfferCardProps = {
-  offerInfo: OfferType;
+  offerInfo: OfferType,
+  onHover: (id:string) => void,
 }
 
-function OfferCard ({offerInfo}: OfferCardProps): JSX.Element {
-  const {price, title, previewImage, isFavorite, type} = offerInfo;
+function OfferCard (props: OfferCardProps): JSX.Element {
+  const { offerInfo, onHover } = props;
+  const {price, title, previewImage, isFavorite, type, id} = offerInfo;
 
   return (
-    <article className="cities__place-card place-card">
+    <article className="cities__place-card place-card"
+      onMouseEnter={(evt: MouseEvent) => {
+        evt.preventDefault();
+        onHover(id);
+      }}
+    >
       <div className="place-card__mark">
         <span>Premium</span>
       </div>
