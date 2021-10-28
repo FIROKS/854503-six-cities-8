@@ -5,7 +5,7 @@ type OfferCardProps = {
 }
 
 function OfferCard ({offerInfo}: OfferCardProps): JSX.Element {
-  const {price, title, previewImage, isFavorite} = offerInfo;
+  const {price, title, previewImage, isFavorite, type} = offerInfo;
 
   return (
     <article className="cities__place-card place-card">
@@ -39,7 +39,7 @@ function OfferCard ({offerInfo}: OfferCardProps): JSX.Element {
         <h2 className="place-card__name">
           <a href="https://www.google.com/">{title}</a>
         </h2>
-        <p className="place-card__type">Apartment</p>
+        <p className="place-card__type">{type}</p>
       </div>
     </article>
   );

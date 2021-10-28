@@ -1,6 +1,6 @@
-import OfferCard from '../offer-card/offer-card';
 import PageHeader from '../page-header/page-header';
 import { OfferType } from '../../types/offer';
+import OffersList from '../offers-list/offers-list';
 
 type MainScreenProps = {
   offers: OfferType[];
@@ -68,9 +68,7 @@ function Main({offers}: MainScreenProps): JSX.Element {
                   <li className="places__option" tabIndex={0}>Top rated first</li>
                 </ul>
               </form>
-              <div className="cities__places-list places__list tabs__content">
-                {offers.map((offer) => <OfferCard offerInfo={offer} key={offer.id}/>)}
-              </div>
+              <OffersList offers={offers}/>
             </section>
             <div className="cities__right-section">
               <section className="cities__map map"></section>
