@@ -1,10 +1,10 @@
 import { OfferType } from '../../types/offer';
 
-type RoomProps = {
+type OfferCardProps = {
   offerInfo: OfferType;
 }
 
-function Room ({offerInfo}: RoomProps): JSX.Element {
+function OfferCard ({offerInfo}: OfferCardProps): JSX.Element {
   const {price, title, previewImage, isFavorite} = offerInfo;
 
   return (
@@ -45,4 +45,4 @@ function Room ({offerInfo}: RoomProps): JSX.Element {
   );
 }
 
-export default Room;
+export default OfferCard;
