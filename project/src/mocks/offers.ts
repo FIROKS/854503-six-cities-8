@@ -13,7 +13,7 @@ export const offers: OfferType[] = [
       'name': 'Amsterdam',
     },
     'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-    'goods': ['Heating', 'Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
+    'goods': ['Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
     'host': {
       'avatarUrl': 'img/avatar-angelina.jpg',
       'id': nanoid(),
@@ -21,7 +21,7 @@ export const offers: OfferType[] = [
       'name': 'Angelina',
     },
     'id': nanoid(),
-    'images': ['img/1.png', 'img/2.png'],
+    'images': ['img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg'],
     'isFavorite': true,
     'isPremium': false,
     'location': {
@@ -47,7 +47,7 @@ export const offers: OfferType[] = [
       'name': 'Paris',
     },
     'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-    'goods': ['Heating', 'Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
+    'goods': ['Heating', 'Kitchen'],
     'host': {
       'avatarUrl': 'img/avatar-max.jpg',
       'id': nanoid(),
@@ -55,7 +55,7 @@ export const offers: OfferType[] = [
       'name': 'Max',
     },
     'id': nanoid(),
-    'images': ['img/1.png', 'img/2.png'],
+    'images': ['img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/studio-01.jpg', 'img/apartment-01.jpg'],
     'isFavorite': false,
     'isPremium': true,
     'location': {
@@ -81,15 +81,15 @@ export const offers: OfferType[] = [
       'name': 'Cologne',
     },
     'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-    'goods': ['Heating', 'Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
+    'goods': ['Coffee machine', 'Dishwasher'],
     'host': {
-      'avatarUrl': 'img/1.png',
+      'avatarUrl': 'img/avatar-angelina.jpg',
       'id': nanoid(),
       'isPro': true,
       'name': 'Angelina',
     },
     'id': nanoid(),
-    'images': ['img/1.png', 'img/2.png'],
+    'images': ['img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg', 'img/apartment-01.jpg'],
     'isFavorite': false,
     'isPremium': false,
     'location': {
@@ -115,15 +115,15 @@ export const offers: OfferType[] = [
       'name': 'Dusseldorf',
     },
     'description': 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-    'goods': ['Heating', 'Kitchen', 'Cable TV', 'Washing machine', 'Coffee machine', 'Dishwasher'],
+    'goods': ['Heating', 'Kitchen', 'Cable TV', 'Dishwasher'],
     'host': {
-      'avatarUrl': 'img/1.png',
+      'avatarUrl': 'img/avatar-angelina.jpg',
       'id': nanoid(),
       'isPro': true,
       'name': 'Angelina',
     },
     'id': nanoid(),
-    'images': ['img/1.png', 'img/2.png'],
+    'images': ['img/room.jpg', 'img/apartment-01.jpg', 'img/apartment-02.jpg', 'img/apartment-03.jpg', 'img/studio-01.jpg', 'img/apartment-01.jpg'],
     'isFavorite': true,
     'isPremium': true,
     'location': {

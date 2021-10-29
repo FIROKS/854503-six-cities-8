@@ -1,29 +1,30 @@
 import { MouseEvent } from 'react';
+import { Link } from 'react-router-dom';
 import { OfferType } from '../../types/offer';
 
 type OfferCardProps = {
   offerInfo: OfferType,
-  onHover: (id:string) => void,
+  onHover?: (id:string) => void,
 }
 
 function OfferCard (props: OfferCardProps): JSX.Element {
-  const { offerInfo, onHover } = props;
-  const {price, title, previewImage, isFavorite, type, id} = offerInfo;
+  const { offerInfo, onHover = null } = props;
+  const { price, title, previewImage, isFavorite, type, id } = offerInfo;
 
   return (
     <article className="cities__place-card place-card"
       onMouseEnter={(evt: MouseEvent) => {
         evt.preventDefault();
-        onHover(id);
+        onHover && onHover(id);
       }}
     >
       <div className="place-card__mark">
         <span>Premium</span>
       </div>
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="https://www.google.com/">
+        <Link to={`/offer/${id}`} title={title}>
           <img className="place-card__image" src={previewImage} width="260" height="200" alt="Place"/>
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -45,7 +46,7 @@ function OfferCard (props: OfferCardProps): JSX.Element {
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="https://www.google.com/">{title}</a>
+          <Link to={`/offer/${id}`} title={title}>{title}</Link>
         </h2>
         <p className="place-card__type">{type}</p>
       </div>

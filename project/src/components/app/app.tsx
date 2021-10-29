@@ -1,18 +1,29 @@
+/* eslint-disable no-console */
 import Main from '../main/main';
 import { AppRoute, AuthorizationStatus } from '../../const';
-import { BrowserRouter, Switch, Route} from 'react-router-dom';
+import { BrowserRouter, Switch, Route, RouteComponentProps } from 'react-router-dom';
 import NotFound from '../not-found/not-found';
 import Login from '../login/login';
 import Favorites from '../favorites/favorites';
 import Offer from '../offer/offer';
 import PrivateRoute from '../private-route/private-route';
 import { OfferType } from '../../types/offer';
+import { Review } from '../../types/review';
 
 type AppProps = {
   offers: OfferType[],
+  reviews: Review[],
 }
 
-function App({offers}: AppProps): JSX.Element {
+type OfferRouteProps = RouteComponentProps & {
+  match: {
+    params: {
+      id: string,
+    }
+  }
+}
+
+function App({offers, reviews}: AppProps): JSX.Element {
   return (
     <BrowserRouter>
       <Switch>
@@ -31,9 +42,17 @@ function App({offers}: AppProps): JSX.Element {
         <Route exact path={AppRoute.Login}>
           <Login />
         </Route>
-        <Route exact path={AppRoute.Offer}>
-          <Offer />
-        </Route>
+        <Route
+          exact
+          path={AppRoute.Offer}
+          render={(props: OfferRouteProps) => (
+            <Offer
+              offers={offers}
+              id={props.match.params.id}
+              reviews={reviews}
+            />
+          )}
+        />
         <Route >
           <NotFound />
         </Route>
